@@ -42,6 +42,9 @@ package cheri_pkg;
   parameter logic [2:0] OTYPE_SENTRY     = 3'd1;
   parameter logic [2:0] OTYPE_UNSEALED   = 3'd0;
 
+  // For ease of casting
+  typedef int unsigned u_int_t;
+
   // Compressed (regFile) capability type
   typedef struct packed {
     logic                valid;

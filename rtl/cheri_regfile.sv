@@ -142,8 +142,8 @@ module cheri_regfile import cheri_pkg::*; #(
     assign rf_cap[i] = rf_cap_q[i];
   end
 
-  assign rcap_a = (int'(raddr_a_i) < NCAPS) ? rf_cap[raddr_a_i] : NULL_REG_CAP;
-  assign rcap_b = (int'(raddr_b_i) < NCAPS) ? rf_cap[raddr_b_i] : NULL_REG_CAP;
+  assign rcap_a = (u_int_t'(raddr_a_i) < NCAPS) ? rf_cap[raddr_a_i] : NULL_REG_CAP;
+  assign rcap_b = (u_int_t'(raddr_b_i) < NCAPS) ? rf_cap[raddr_b_i] : NULL_REG_CAP;
 
   if (CheriPPLBC) begin : g_regrdy
 
