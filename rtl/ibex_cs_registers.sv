@@ -16,6 +16,8 @@
 
 `include "prim_assert.sv"
 
+/* verilator lint_off UNUSED */
+
 module ibex_cs_registers import cheri_pkg::*;  #(
   parameter bit               DbgTriggerEn      = 0,
   parameter int unsigned      DbgHwBreakNum     = 1,
@@ -1991,3 +1993,5 @@ module ibex_cs_registers import cheri_pkg::*;  #(
   end
 
 endmodule
+
+/* verilator lint_on UNUSED */
