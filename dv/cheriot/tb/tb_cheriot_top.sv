@@ -451,45 +451,5 @@ module tb_cheriot_top (
     .end_sim_req     (end_mon_flag)
   );
 
-  //
-  // random interrupt generator
-  //
-  intr_gen u_intr_gen (
-    .clk             (clk_i        ), 
-    .rst_n           (rst_ni       ),
-    .INTR_INTVL      (intr_intvl   ),
-    .intr_en         (intr_enable  ),
-    .intr_ack        (intr_ack     ),  
-    .irq_o           (irq_vec      )
-  );
-
-  //
-  // random cap error injection
-  //
-  cap_err_gen u_cap_err_gen ( 
-    .clk             (clk_i        ),
-    .rst_n           (rst_ni       ),
-    .ERR_RATE        (cap_err_rate ),
-    .err_enable      (cap_err_enable),
-    .err_active      (),
-    .err_failed      ()
-  );
-
-  //
-  // random TBRE background traffic generation
-  //
-  tbre_bg_gen u_tbre_bg_gen (
-    .clk             (clk_i        ), 
-    .rst_n           (rst_ni       ),
-    .TBRE_INTVL      (tbre_intvl   ),
-    .STKZ_INTVL      (stkz_intvl   ),
-    .tbre_bg_en      (tbre_bg_enable),
-    .stkz_bg_en      (stkz_bg_enable),
-    .mmreg_corein    (mmreg_corein_1),
-    .mmreg_coreout   (mmreg_coreout ),
-    .tbre_active     (tbre_bg_active),
-    .stkz_active     (stkz_bg_active)
-  );
-
 endmodule
 

@@ -480,10 +480,10 @@ module mem_mon_top import cheri_pkg::*; import cheriot_dv_pkg::*; (
   // Tracking CPU execution of startup/exception handler and
   // suppress error injection during the phase
   // 
-  assign req_isr = dut.u_ibex_top.u_ibex_core.id_stage_i.instr_executing &
-                   dut.u_ibex_top.u_ibex_core.load_store_unit_i.lsu_req_i &
-                   ~dut.u_ibex_top.u_ibex_core.load_store_unit_i.cur_req_is_tbre &
-                   dut.u_ibex_top.u_ibex_core.id_stage_i.controller_i.controller_dv_ext_i.cpu_in_isr;
+  assign req_isr = 0;//dut.u_ibex_top.u_ibex_core.id_stage_i.instr_executing &
+                   //dut.u_ibex_top.u_ibex_core.load_store_unit_i.lsu_req_i &
+                   //~dut.u_ibex_top.u_ibex_core.load_store_unit_i.cur_req_is_tbre &
+                   //dut.u_ibex_top.u_ibex_core.id_stage_i.controller_i.controller_dv_ext_i.cpu_in_isr;
 
   assign req_cpu =  dut.u_ibex_top.u_ibex_core.load_store_unit_i.lsu_req_i &
                    ~dut.u_ibex_top.u_ibex_core.load_store_unit_i.cur_req_is_tbre;
