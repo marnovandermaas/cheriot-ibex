@@ -1114,7 +1114,7 @@ module ibex_id_stage import cheri_pkg::*; #(
     assign stall_ld_hz = outstanding_load_wb_i & (rf_rd_a_hz | rf_rd_b_hz);
 
     logic rf_we_valid;
-    assign rf_we_valid = rf_we_dec & instr_valid_i & ~instr_fetch_err_i & ~illegal_insn_o;
+    assign rf_we_valid = decoder_i.rf_we_or_load & instr_valid_i & ~instr_fetch_err_i & ~illegal_insn_o;
    
 
     assign stall_cheri_trvk = (CHERIoTEn & cheri_pmode_i & CheriPPLBC) ? 
